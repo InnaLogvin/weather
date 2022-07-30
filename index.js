@@ -35,14 +35,15 @@ function showWeather(response) {
   let humidvalue = document.querySelector("#humidvalue");
   let humid = Math.round(response.data.main.humidity);
   humidvalue.innerHTML = `${humid}`;
+  let city = response.data.name;
+  let displayInput = document.querySelector("h1");
+  displayInput.innerHTML = city;
 }
 
 function displayCity(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-input");
   let theCity = `${cityInput.value}`;
-  let displayInput = document.querySelector("h1");
-  displayInput.innerHTML = theCity;
   let apiKey = "415b778c777202b3c441f0a528a39576";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${theCity}&appid=${apiKey}&units=${units}`;
