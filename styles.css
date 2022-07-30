@@ -54,6 +54,8 @@ h3 {
   font-size: 20px;
 }
 .container {
-  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
   padding-bottom: 10px;
+}
+.body-app {
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
 }
