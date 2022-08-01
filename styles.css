@@ -2,6 +2,16 @@ body {
   font-family: Cerebri Sans, Helvetica, Arial, sans-serif;
   margin: 0px 450px 800px 450px;
 }
+@media all and (max-width: 1200px) {
+  body {
+    width: 960;
+  }
+}
+@media all and (max-width: 480px) {
+  body {
+    width: 320px;
+  }
+}
 input {
   margin-top: 20px;
   border-radius: 15px;
