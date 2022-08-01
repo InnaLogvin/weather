@@ -2,12 +2,14 @@ body {
   font-family: Cerebri Sans, Helvetica, Arial, sans-serif;
   margin: 0px 450px 800px 450px;
 }
-@viewport {
-  width: auto;
+@media all and (max-width: 1200px) {
+  body {
+    width: 960;
+  }
 }
-@media (max-width: 384px) {
-  @viewport {
-    width: 384px;
+@media all and (max-width: 480px) {
+  body {
+    width: 320px;
   }
 }
 input {
