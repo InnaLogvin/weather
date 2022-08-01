@@ -28,16 +28,17 @@ function formatDate(date) {
 formatDate(currentTime);
 
 function showWeather(response) {
-  console.log(response.data.main);
-  let value = document.querySelector("#value");
-  let temperature = Math.round(response.data.main.temp);
-  value.innerHTML = `It is ${temperature}°C in ${response.data.name}`;
-  let humidvalue = document.querySelector("#humidvalue");
-  let humid = Math.round(response.data.main.humidity);
-  humidvalue.innerHTML = `${humid}`;
-  let city = response.data.name;
-  let displayInput = document.querySelector("h1");
-  displayInput.innerHTML = city;
+  console.log(response.data);
+  document.querySelector("h1").innerHTML = response.data.name;
+  document.querySelector("#tempvalue").innerHTML = Math.round(
+    response.data.main.temp
+  );
+  document.querySelector("#humidvalue").innerHTML = Math.round(
+    response.data.main.humidity
+  );
+  document.querySelector("#windvalue").innerHTML = Math.round(
+    response.data.wind.speed
+  );
 }
 
 function displayCity(event) {
@@ -52,3 +53,20 @@ function displayCity(event) {
 }
 let signUpForm = document.querySelector("#enter-city");
 signUpForm.addEventListener("submit", displayCity);
+
+//function convertToFahrenheit(event) {
+//event.preventDefault();
+//let temperatureElement = document.querySelector("#temperature");
+//temperatureElement.innerHTML = 66;
+//}
+
+//function convertToCelsius(event) {
+//event.preventDefault();
+//let temperatureElement = document.querySelector("#temperature");
+//temperatureElement.innerHTML = Math.round(response.data.main.humidity);
+//}
+//let fahrenheitLink = document.querySelector("#fahrenheit-link");
+//fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
+//let celsiusLink = document.querySelector("#celsius-link");
+//celsiusLink.addEventListener("click", convertToCelsius);
