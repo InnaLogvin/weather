@@ -46,15 +46,20 @@ function showWeather(response) {
 function displayCity(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-input");
-  let theCity = `${cityInput.value}`;
+  let city = `${cityInput.value}`;
+  search(city);
+}
+function search(city) {
   let apiKey = "415b778c777202b3c441f0a528a39576";
   let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${theCity}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(showWeather);
 }
 let signUpForm = document.querySelector("#enter-city");
 signUpForm.addEventListener("submit", displayCity);
+
+search("Dnipro");
 
 //function convertToFahrenheit(event) {
 //event.preventDefault();
