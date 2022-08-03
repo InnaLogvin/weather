@@ -9,11 +9,13 @@ body {
 @media all and (max-width: 1200px) {
   body {
     width: 960;
+    margin: 10px auto;
   }
 }
 @media all and (max-width: 480px) {
   body {
     width: 320px;
+    margin: 0px auto;
   }
 }
 input {
